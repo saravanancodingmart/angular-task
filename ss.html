@@ -52,8 +52,6 @@ app.controller('myCtrl', function($scope,$interval)
 		console.log("function calling...");
 		if($scope.checkbox==true)
 		{
-			
-   
 			if($scope.value==0)
 			{
 			$scope.image="images/0.jpg";
@@ -62,16 +60,16 @@ app.controller('myCtrl', function($scope,$interval)
 			{
 				$scope.image= slides[0];
    				var promise=$interval(function(){
-   				console.log($scope.value);
-      			$scope.image=slides[i++];
-      			if ($scope.image==slides[12]) 
-      			{
-      				i=0;
-      			}
-      			console.log($scope.image);
-    			},100);
+		   				console.log($scope.value);
+		      			$scope.image=slides[i++];
+		      			if ($scope.image==slides[12]) 
+		      			{
+		      				i=0;
+		      			}
+		      			console.log($scope.image);
+		    			},100);
                   
-                console.log(ss);
+ 
 
    				if($scope.value!=ss)
 				{
