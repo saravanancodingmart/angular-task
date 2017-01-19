@@ -1,0 +1,110 @@
+	.checkbox
+	{
+		font-size: 32;
+	}
+	pre
+	{
+		font-size: 20;
+	}
+
+	input[type="checkbox"]
+	{
+		width: 20px; /*Desired width*/
+		height: 32px; /*Desired height*/
+	}
+
+	body 
+	{
+		overflow: hidden;
+	}
+
+	input[type="range"]::-moz-range-progress 
+	{
+	  background-color: #43e5f7; 
+	}
+	
+	input[type="range"]::-moz-range-track {  
+	  background-color: #9a905d;
+	}
+
+
+
+
+#clouds{
+	width:40%;
+	height:4;
+	padding: 100px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+.cloud {
+	width: 200px; 
+	height: 30px;
+	background: #fff;
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	position: relative; 
+}
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+/*Time to animate*/
+#x1 {
+	-webkit-animation: moveclouds 9s linear infinite;
+	-moz-animation: moveclouds 9s linear infinite;
+	-o-animation: moveclouds 9s linear infinite;
+}
+#x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; 
+	-webkit-animation: moveclouds 10s linear infinite;
+	-moz-animation: moveclouds 10s linear infinite;
+	-o-animation: moveclouds 10s linear infinite;
+}
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+/* Use this for transitions */
+.disable-animations.ng-enter,
+.disable-animations.ng-leave,
+.disable-animations.ng-animate {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+/* Use this for keyframe animations */
+.disable-animations.ng-animate {
+  -webkit-animation: none 0s;
+  animation: none 0s;
+}

@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+ 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+	</head>
+
+<body  class="container" ng-app="myApp" ng-controller="myCtrl">
+	<div class="checkbox">  
+		<center>  <input type="checkbox" name="run" id="run" ng-change="fun()" ng-model="checkbox.value"> RUN </center>
+	</div>
+	<pre> SPEED </pre>
+	<div>
+		<input type="range" name="range" ng-model="value" step="10" min="0"  max="100" ng-change="fun()" style=" width:30%;">
+	</div>
+  		<pre> {{value}}</pre>
+
+  	<div id="clouds">
+		<div  ng-hide="!checkbox.value" class="cloud" id="x1"></div>
+		<!-- Time for multiple clouds to dance around -->
+		<div  ng-hide="!checkbox.value" class="cloud" id="x2" ></div>
+	</div>
+
+  	<div>
+  		<img ng-src="{{image}}" style="width:40%;height:40%;"/>
+  	</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) 
+{  
+ $scope.image="images/000.jpg";
+ $scope.value=0;
+
+ $scope.fun=function()
+ {
+ 	 if($scope.checkbox.value==true)
+ {
+ 	if($scope.value==0)
+ 	{
+ 		$scope.image="images/0.jpg";
+ 	}
+ 	if($scope.value==10)
+ 	{
+ 		$scope.image="images/11.gif";
+ 	}
+ 	if($scope.value==20)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(1).gif";
+ 	}
+ 	
+ 	if($scope.value==30)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(2).gif";
+ 	}
+ 	
+ 	if($scope.value==40)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(3).gif";
+ 	}
+ 	
+ 	if($scope.value==50)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(4).gif";
+ 	}
+ 	
+ 	if($scope.value==60)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(5).gif";
+ 	}
+ 	
+ 	if($scope.value==70)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(6).gif";
+ 	}
+ 	
+ 	if($scope.value==80)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(7).gif";
+ 	}
+ 	if($scope.value==90)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(9).gif";
+ 	}
+ 	if($scope.value==100)
+ 	{
+ 		$scope.image="images/ezgif.com-gif-maker(10).gif";
+ 	}	
+ }
+ else
+ {
+ 	$scope.image="images/000.jpg";
+ }	
+}
+});
+</script>
+</body>
+</html>
+ 

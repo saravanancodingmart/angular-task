@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+ 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+	</head>
+
+<body  class="container" ng-app="myApp" ng-controller="myCtrl">
+	<div class="checkbox">  
+		<center>  <input type="checkbox" name="run" ng-change="fun()" ng-model="checkbox"> RUN </center>
+	</div>
+	<pre> SPEED </pre>
+	<div>
+		<input type="range" name="range" ng-model="value" step="10" min="0"  max="100" ng-change="fun()" style=" width:30%;">
+	</div>
+  		<pre> {{value}}</pre>
+
+  	<div id="clouds">
+		<div  ng-hide="!checkbox.value" class="cloud" id="x1"></div>
+		<div  ng-hide="!checkbox.value" class="cloud" id="x2" ></div>
+	</div>
+
+  	<div>
+  		<img ng-src="{{image}}" style="width:40%;height:40%;"/>
+  	</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) 
+{
+		 $scope.image="images/0.jpg";
+		 $scope.value=0;
+		 $scope.val = false;
+		 var temp,i;
+		 $scope.fun=function()
+		 {
+			 	 if($scope.checkbox==true)
+			 {
+			 	if($scope.value==0)
+			 	{
+			 		$scope.image="images/0.jpg";
+			 	}
+			 	else
+			 	{
+			 		temp=$scope.value;
+			 		console.log("outside :"+temp);
+			 		for(i=0;;i++)
+			 		{
+                        console.log("inside :"+temp);
+			 			//console.log("inside for");
+
+			 			if($scope.value==temp)
+			 			{
+				 			if(i==12)
+				 			{
+				 				i=0;
+				 			}
+							$scope.image="images/"+i+".jpg";
+					    	window.setTimeout(function()
+					     	{
+					            $scope.val = true;
+					        }, 3000);
+					     }
+					     else
+					     {
+					     	break;
+					     }    
+			 		}
+			 	}
+			 }
+			 else
+			 {
+			 	$scope.image="images/0.jpg";
+			 }	
+			}
+			});
+			</script>
+			</body>
+			</html>
+			 
